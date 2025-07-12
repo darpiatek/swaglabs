@@ -1,0 +1,27 @@
+# ---> Python
+# Cache files
+__pycache__/
+
+#IDEA files
+.idea/
+.DS_Store
+
+#Test results
+reports/
+log/
+
+#VirtualEnv
+venv/
+
+#settings
+.env
+.pytest_cache
+
+#test-output
+test/api/test-output.xml
+test/ui/test-output.xml
+allure-report/
+allure-results/
+
+#testdata
+testdata/testrepo

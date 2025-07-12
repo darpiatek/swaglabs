@@ -1,0 +1,6 @@
+selenium==4.34.2
+pytest==8.4.1
+python-decouple==3.8
+allure-pytest==2.14.3
+pytest-bdd==8.1.0
+cryptography==43.0.0
