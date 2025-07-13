@@ -22,21 +22,21 @@ class CheckoutPage(AbsBasePage):
         return self
 
     def click_continue_button(self) -> OrderOverviewPage:
-        self.logger.info('Click Continue button')
+        self.logger.substep('Click Continue button')
         self.continue_button.click()
         return OrderOverviewPage(self.driver)
 
     def set_first_name(self, value: str) -> CheckoutPage:
-        self.logger.info(f'Set first name as "{value}"')
+        self.logger.substep(f'Set first name as "{value}"')
         self.first_name_input.value = value
         return self
 
     def set_last_name(self, value: str) -> CheckoutPage:
-        self.logger.info(f'Set last name as "{value}"')
+        self.logger.substep(f'Set last name as "{value}"')
         self.last_name_input.value = value
         return self
 
     def set_postal_code(self, value: str) -> CheckoutPage:
-        self.logger.info(f'Set postal code as "{value}"')
+        self.logger.substep(f'Set postal code as "{value}"')
         self.postal_code_input.value = value
         return self

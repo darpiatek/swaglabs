@@ -27,6 +27,6 @@ class OrderOverviewPage(AbsBasePage):
         return float(self.total_text.value.replace('Item total: $', ''))
 
     def click_finish_button(self) -> OrderCompletionPage:
-        self.logger.info('Click Finish button')
+        self.logger.substep('Click Finish button')
         self.finish_button.click()
         return OrderCompletionPage(self.driver)

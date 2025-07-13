@@ -21,7 +21,7 @@ class AbsBasePage:
     def open(self, timeout=Timeouts.SHORT):
         if self.base_url is None:
             raise Exception('base_url is not set')
-        self.logger.info(f'Visit website: {self.base_url}')
+        self.logger.substep(f'Visit website: {self.base_url}')
         self.driver.get(self.base_url)
         self.wait_for_page_to_load(timeout)
         return self

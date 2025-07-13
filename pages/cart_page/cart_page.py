@@ -18,6 +18,6 @@ class CartPage(AbsBasePage):
         return self
 
     def click_checkout_button(self) -> CheckoutPage:
-        self.logger.info('Click Checkout button')
+        self.logger.substep('Click Checkout button')
         self.checkout_button.click()
         return CheckoutPage(self.driver)

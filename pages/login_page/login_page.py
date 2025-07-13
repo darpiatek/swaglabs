@@ -14,7 +14,7 @@ class LoginPage(AbsBasePage):
     password_input = InputField(*LoginPageLocators.PASSWORD_FIELD)
 
     def click_login_button(self) -> InventoryPage:
-        self.logger.info('Click Login button')
+        self.logger.substep('Click Login button')
         self.login_button.click()
         return InventoryPage(self.driver)
 
@@ -26,11 +26,11 @@ class LoginPage(AbsBasePage):
         return self
 
     def set_username(self, value: str) -> LoginPage:
-        self.logger.info(f'Set Username as "{value}"')
+        self.logger.substep(f'Set Username as "{value}"')
         self.user_name_input.value = value
         return self
 
     def set_password(self, value: str) -> LoginPage:
-        self.logger.info(f'Set password as "{value}"')
+        self.logger.substep(f'Set password as "{value}"')
         self.password_input.value = value
         return self

@@ -28,7 +28,7 @@ class InventoryPage(AbsBasePage):
         return self
 
     def click_cart_button(self) -> CartPage:
-        self.logger.info('Click cart button')
+        self.logger.substep('Click cart button')
         self.cart_button.click()
         return CartPage(self.driver)
 
