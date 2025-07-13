@@ -27,7 +27,7 @@ source venv/bin/activate
 ```
 python3 -m pip install -r conf/requirements.txt
 ```
-* Create .env file in the project directory and add following. Add to .env file the key received in the email. Its required to decrypt credentials
+* Create .env file in the root project directory and add following. Add to .env file the key received in the email. Its required to decrypt credentials
 ```.env
 ENV=DEV
 LOG_LEVEL=INFO
