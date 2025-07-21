@@ -21,3 +21,13 @@ class CartPage(AbsBasePage):
         self.logger.substep('Click Checkout button')
         self.checkout_button.click()
         return CheckoutPage(self.driver)
+
+    def get_all_cart_items(self):
+        return self.driver.find_elements(*CartPageLocators.CART_ITEMS)
+
+    def validate_products_in_cart(self, products):
+        items = self.get_all_cart_items()
+        assert len(products) == len(items)
+        for item in items:
+            item_name = item.find_element(*CartPageLocators.CART_ITEM_NAME).text
+            assert item_name in products

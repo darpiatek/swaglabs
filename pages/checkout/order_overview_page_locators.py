@@ -4,3 +4,5 @@ class OrderOverviewPageLocators:
     ORDER_OVERVIEW_PAGE = (By.ID, 'checkout_summary_container')
     FINISH_BUTTON = (By.XPATH, '//a[contains(@class, "cart_button")]')
     TOTAL_TEXT = (By.CLASS_NAME, 'summary_subtotal_label')
+    ORDER_ITEMS = (By.CLASS_NAME, 'cart_item')
+    ORDER_ITEM_NAME = (By.CLASS_NAME, 'inventory_item_name')

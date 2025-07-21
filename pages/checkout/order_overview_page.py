@@ -23,8 +23,18 @@ class OrderOverviewPage(AbsBasePage):
         assert self.get_item_total() == value
         return self
 
+    def get_all_order_items(self):
+        return self.driver.find_elements(*OrderOverviewPageLocators.ORDER_ITEMS)
+
+    def validate_products_in_order(self, products):
+        items = self.get_all_order_items()
+        assert len(products) == len(items)
+        for item in items:
+            item_name = item.find_element(*OrderOverviewPageLocators.ORDER_ITEM_NAME).text
+            assert item_name in products
+
     def get_item_total(self):
-        return float(self.total_text.value.replace('Item total: $', ''))
+        return round(float(self.total_text.value.replace('Item total: $', '')), 2)
 
     def click_finish_button(self) -> OrderCompletionPage:
         self.logger.substep('Click Finish button')

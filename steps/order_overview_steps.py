@@ -17,3 +17,9 @@ def finish_checkout(driver):
 def validate_order_total(driver, shopping_context):
     order_overview_page = OrderOverviewPage(driver)
     order_overview_page.validate_order_total(shopping_context['cart_total'])
+
+@when("The user validates the product names in order")
+@allure.step("The user validates the product names in order")
+def validate_order_total(driver, shopping_context):
+    order_overview_page = OrderOverviewPage(driver)
+    order_overview_page.validate_products_in_order(shopping_context['cart_items'])

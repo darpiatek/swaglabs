@@ -9,9 +9,15 @@ Feature: Successful end-to-end purchase flow on Swag Labs
   Scenario: Standard user completes a purchase successfully
     When The standard_user logs in with valid credentials
     And The user adds the following products to the cart:
-      | product name                |
-      | Sauce Labs Backpack         |
-      | Sauce Labs Bolt T-Shirt     |
+      | product name            |
+      | Sauce Labs Backpack     |
+      | Sauce Labs Bolt T-Shirt |
+      | Sauce Labs Onesie       |
+      | Sauce Labs Fleece Jacket |
+    And The user removes the following products from the cart:
+      | product name            |
+      | Sauce Labs Backpack     |
+      | Sauce Labs Bolt T-Shirt |
     And The user navigates to the shopping cart
     And The user proceeds to the checkout step
     And The user enters the checkout information:
@@ -22,3 +28,21 @@ Feature: Successful end-to-end purchase flow on Swag Labs
     And The user finishes the checkout
     Then A confirmation message THANK YOU FOR YOUR ORDER is displayed
     And The user logs out successfully
+
+Scenario: Standard user purchases the cheapest and most expensive product
+  When The standard_user logs in with valid credentials
+  When The user sorts the products by Price (low to high)
+  And The user adds the first product to the cart
+  And The user adds the last product to the cart
+  And The user navigates to the shopping cart
+  And The user validates product names in cart
+  When The user proceeds to the checkout step
+  And The user enters the checkout information:
+    | firstName | lastName  | postalCode |
+    | Jan       | Kowalski  | 12345      |
+  And The user continues to the order overview page
+  And The user validates the order total
+  And The user validates the product names in order
+  And The user finishes the checkout
+  Then A confirmation message THANK YOU FOR YOUR ORDER is displayed
+  And The user logs out successfully

@@ -70,4 +70,5 @@ def take_screenshot(driver):
 
 @pytest.fixture
 def shopping_context():
-    return {}
+    return dict(cart_items=[],
+                cart_total=0)

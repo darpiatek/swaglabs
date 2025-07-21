@@ -8,3 +8,5 @@ class InventoryPageLocators:
     INVENTORY_ITEM_PRICE = lambda index: (By.XPATH, f'(//div[@class ="inventory_item_price"])[{index}]')
     NUMBER_OF_CART_ITEMS_TEXT = (By.XPATH, '//span[contains(@class, "shopping_cart_badge")]')
     CART_BUTTON = (By.ID, 'shopping_cart_container')
+    INVENTORY_ITEM_REMOVE_FROM_CART_BUTTON = lambda index: (By.XPATH, f'(//div[@class="pricebar"]//button)[{index}]')
+    DROPDOWN_SORT_MENU = (By.XPATH, '//select[@class="product_sort_container"]')
